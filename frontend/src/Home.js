@@ -6,8 +6,8 @@ const Home = () => {
     return (
 
         <div>
-            <h2>Home</h2>
-        </div>
+            <h1 style={{ textAlign: "center" }}>Search Flights</h1>
+        </div >
 
 
 
