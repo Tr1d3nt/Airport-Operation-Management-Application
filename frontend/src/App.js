@@ -1,12 +1,15 @@
 
+
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './Home';
 import NavBar from './NavBar';
 import NotFound from './NotFound';
 
+
 function App() {
   return (
     <div className="App">
+
       <Router>
         <div className="App">
           {/*The NavBar (NavBar.js)*/}
@@ -25,6 +28,7 @@ function App() {
           </div>
         </div>
       </Router>
+
 
     </div>
   );
