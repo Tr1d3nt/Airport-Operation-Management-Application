@@ -1,9 +1,9 @@
 
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Home from './Home';
-import NavBar from './NavBar';
-import NotFound from './NotFound';
+import Home from './components/Home';
+import NavBar from './components/NavBar';
+import NotFound from './components/NotFound';
 
 
 function App() {
