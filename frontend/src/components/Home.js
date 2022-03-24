@@ -1,12 +1,15 @@
 import { useState, useEffect } from 'react';
 import AutoCompleteText from './AutoCompleteText';
-
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 const Home = () => {
     const data = [
         'Josh',
         'Brady'];
 
     const [cities, setCities] = useState('');
+    const [departDate, setDepartDate] = useState(new Date());
+    const [arrivalDate, setArrivalDate] = useState(new Date());
 
     const getCities = () => {
 
@@ -42,8 +45,19 @@ const Home = () => {
 
     return (
         <div>
+
             <h2 style={{ textAlign: "center" }}>Book Flight</h2>
-            <AutoCompleteText items={cities} />
+            <div className="AutoComplete-Component">
+                <div>
+                    <AutoCompleteText items={cities} />
+                </div>
+                <div>
+                    <DatePicker selected={departDate} onChange={(date) => setDepartDate(date)} />
+                </div>
+                <div>
+                    <DatePicker selected={arrivalDate} onChange={(date) => setArrivalDate(date)} />
+                </div>
+            </div>
 
         </div>
     );

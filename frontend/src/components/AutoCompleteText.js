@@ -39,14 +39,23 @@ export default class AutoCompleteText extends React.Component {
 
     renderSuggestions() {
         const { suggestions } = this.state;
-        if (suggestions.length === 0) {
+        console.log(suggestions.length);
+        if (suggestions.length < 5) {
+
+            return (
+                <ul>
+                    {suggestions.map((item) =>
+
+                        <li onClick={() =>
+                            this.suggestionSelected(item)}>{item}</li>
+                    )
+                    }
+                </ul>
+            )
+        }
+        else {
             return null;
         }
-        return (
-            <ul>
-                {suggestions.map((item) => <li onClick={() => this.suggestionSelected(item)}>{item}</li>)}
-            </ul>
-        )
     }
 
     render() {
@@ -54,10 +63,15 @@ export default class AutoCompleteText extends React.Component {
         const { text } = this.state;
 
         return (
+
             <div>
-                <input value={text} onChange={this.onTextChanged} type="text" />
-                {this.renderSuggestions()}
+                <label>Destination</label>
+                <div className="AutoCompleteText">
+                    <input value={text} placeholder="Enter City" onChange={this.onTextChanged} type="text" />
+                    {this.renderSuggestions()}
+                </div>
             </div>
+
         )
 
     }
