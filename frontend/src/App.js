@@ -21,28 +21,43 @@ import LocalizationProvider from '@mui/lab/LocalizationProvider';
 
 const theme = createTheme({
   palette: {
-    mode: "dark",
     primary: {
-      main: "#000000",
+      main: "#ad0000",
+      contrastText: "ffffff"
     },
     secondary: {
-      main: "#ad0000",
+      main: "#181818",
+      contrastText: "#ffffff"
     },
     background: {
-      default: "#181818",
-      paper: "#4c4c4c",
+      default: '#000000',
+      paper: '#181818',
     },
     text: {
       primary: "#ffffff",
     },
     divider: "rgba(255,255,255,0.7)",
   },
-  typography: {},
 });
 
 function App() {
   return (
-    <LocalizationProvider dateAdapter={AdapterDateFns}>
+
+<LocalizationProvider dateAdapter={AdapterDateFns}>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Grid
+        container
+        className="App"
+        direction="column"
+        align="center"
+        justifyContent="space-between"
+        wrap="nowrap"
+      >
+        <Grid item>
+          <NavBar />
+        </Grid>
+
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <Grid

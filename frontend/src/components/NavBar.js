@@ -1,7 +1,30 @@
+import { AppBar, Button, Toolbar, Grid } from "@mui/material";
+
 const NavBar = () => {
   return (
     <div>
-      <h1>NavBar</h1>
+      <AppBar color="secondary">
+        <Toolbar>
+          <Grid
+            container
+            direction="row"
+            align="center"
+            justifyContent="space-between"
+          >
+            <Grid item>
+              logo, text
+            </Grid>
+
+            <Grid item>
+              menu
+            </Grid>
+
+            <Grid item>
+              login, signup, user account
+            </Grid>
+          </Grid>
+        </Toolbar>
+      </AppBar>
     </div>
   );
 };
